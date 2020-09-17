@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #546377;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+}
+
+.list li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  /* background: #fff; */
+  background: linear-gradient(270deg, #185a9d, #43cea2);
+  border-radius: 50%;
+  position: relative;
+  font-size: 30px;
+  color: #ffffff;
+  box-shadow: 0 0 0 2px #fff;
+}
+
+.list li .fa {
+  font-size: 60px;
+  margin-bottom: 6px;
+}
+
+.list li + li {
+  margin-left: 100px;
+}
+
+.list li + li::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 5px;
+  background: linear-gradient(270deg,#43cea2, #185a9d);
+  top: 0;
+  bottom: 0;
+  left: -100px;
+  margin: auto;
+  z-index: -1;
+  box-shadow: 0 0 0 1px #fff;
+}
+
+.list li.active ~ li {
+  background: linear-gradient(0deg,#999, #ccc);
+}
+
+.list li.active ~ li::before {
+  background: #999;
+}
